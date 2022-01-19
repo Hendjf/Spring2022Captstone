@@ -1,0 +1,9 @@
+[ios]
+INSERT IP ADDRESS HERE  ansible_host=SAME IP ADDRESS AGAIN
+
+[ios:vars]
+
+ansible_ssh_pass=
+ansible_user=
+ansible_network_os=ios
+ansible_connection=network_cli

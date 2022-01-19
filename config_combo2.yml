@@ -1,0 +1,39 @@
+#Cisco IOS 12.2 Hardening Playbook
+#
+
+#+ ip ssh version 2
+#+ no ip domain-lookup
+#+ transport input ssh
+#+ logging buffered 15000
+
+
+- hosts: ios
+  gather_facts: no
+
+
+  tasks:
+ 
+
+  - name: IP SSH VERSION 2 
+    ios_config:
+      lines:
+        - ip ssh version 2
+
+  - name: NO IP DOMAIN-LOOKUP
+    ios_config:
+      lines:
+        - no ip domain-lookup
+
+
+  - name: TRANSPORT INPUT SSH 
+    ios_config:
+      lines:
+        - line vty 0 15
+        - transport input ssh
+
+  - name: LOGGING BUFFERED 15000 
+    ios_config:
+      lines:
+        - logging buffered 15000
+        
+
