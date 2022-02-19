@@ -1,6 +1,6 @@
-Rename-Computer -NewName NEWDOMAINCONTROLLERNAME
-New-NetIPAddress –IPAddress 192.168.1.10 -DefaultGateway 192.168.1.1 -PrefixLength 24 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
-Set-DNSClientServerAddress –InterfaceIndex (Get-NetAdapter).InterfaceIndex –ServerAddresses 192.168.1.10
+Rename-Computer -NewName ITD-F1-VSRV_AD_DC
+New-NetIPAddress –IPAddress 10.1.10.11  -DefaultGateway 10.1.10.11 -PrefixLength 24 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
+Set-DNSClientServerAddress –InterfaceIndex (Get-NetAdapter).InterfaceIndex –ServerAddresses 10.1.10.11
 Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools
-Install-ADDSForest -DomainName companyname.com -DomainNetBIOSName COMPANY -InstallDNS
+Install-ADDSForest -DomainName ITD.LOCAL -DomainNetBIOSName ITD.LOCAL -InstallDNS
 Restart-Computer
