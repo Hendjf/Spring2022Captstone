@@ -1,0 +1,8 @@
+network:
+  ethernets:
+    ens160:
+      dhcp4: yes
+      nameservers:
+        addresses:
+        - 10.2.80.2
+  version: 2
